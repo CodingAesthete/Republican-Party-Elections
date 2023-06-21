@@ -4,12 +4,20 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-top: 3rem;
   background-color: rgba(217, 255, 199, 0.534);
   background-image: url('images/us2.webp');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container, .candidate-container{
+  scroll-margin-top:120px;
 }
 
 .title {
@@ -149,14 +157,14 @@ main .container{
 }
 
 @media screen and (min-width: 856px) and (max-width: 1249px) {
-body{
-  min-height: 180vh;
-}
+  body{
+    min-height: 180vh;
+  }
 
   main .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row-gap: 9rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 9rem;
     justify-items: center;
     justify-content: center;
     align-items: center;
@@ -170,7 +178,7 @@ body{
 @media screen and (max-width: 855px) {
   main .container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 9rem;
     padding-bottom: 5rem;
     margin-bottom: 5rem;
@@ -188,10 +196,6 @@ body{
     scroll-behavior: smooth;
   }
 
-  .candidate-container{
-    scroll-margin-top:3.5rem;
-  }
-
   .candidate-info {
     width: 15rem;
     height: 25rem;
@@ -202,11 +206,7 @@ body{
     height: 33rem;
   }
 
-  /* #nikki {
-    order: -1;
-  } */
-
-   .name{
+  .name{
     order:-1;
   }
 
